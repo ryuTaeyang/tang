@@ -1,0 +1,34 @@
+function checkNum(){
+
+const [randomNum , setRandomNum] = useState('1~30 사이의 숫자를 맞춰보세요');
+const [answer , setAnswer] = useState(0);
+const [AiNum , setAiNum] = useState(Math.ceil(Math.random()*30))
+
+
+function answer(e){
+e.preventDefault()
+if(+answer == AiNum){
+ setRandomNum("정답")
+ setTimeout(function(){
+},2000)
+ }else if(answer < AiNum){
+  setRandomNum("Up!!")
+}else{
+setRandomNum("Down")}
+
+}
+
+
+function changeAnswer(e) {
+setAnswer(e.target.value)}
+
+return(
+<div calss = "background-card">
+ <form onSubmit = {answer} >
+<h1>Up and Down </h1>
+<p>[randomNum }</p>
+<input type ='number' max='30' min='1' value={answer} onChange={changeAnswer}/>
+<button>확인</button>
+</div>
+);
+}
