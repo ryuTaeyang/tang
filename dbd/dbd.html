@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeadByDaylight</title>
+    <script
+      src="https://kit.fontawesome.com/ae20d15cd7.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        margin: 0 auto;
+        padding: 0;
+      }
+     .headMenu ul > li >a{
+        text-decoration: none;
+        color: white;
+      }
+      .rightHeadMenu > li > a{
+        text-decoration: none;
+        color: white;
+      }
+      i{
+        cursor: pointer;
+      }
+     .backColor{
+      background-color: rgb(204 0 0);
+      height: 36px;
+      width: 120px;
+    text-align: center;
+    cursor: pointer;
+     }
+      li {
+        list-style: none;
+
+      }
+      #logo > img {
+        width: 150px;
+        float: left;
+        height: 100px;
+      }
+      .floatL{
+        float: left;
+      }
+      .floatR{
+        float: right;
+      }
+      .padding2em{
+        padding: 2em;
+      }
+      .paddingL16{
+        padding-left: 16em;
+      }
+      
+      header{
+        background-color: black;
+        height: 100px;
+      }
+      .back{
+        position: absolute;
+        left: 0;
+     
+      }
+  .back > img{
+        width: 1909px;
+    height: 837px;
+    
+      }
+  .char{
+      position: relative;
+      }
+  .char>img {
+    position: relative;
+    top: 8rem;
+    left: 24rem;
+    width: 23vw;
+    animation: dotgu;
+    animation-duration: 7s;
+ animation-iteration-count: infinite;
+}
+.char1 > img{
+  position: relative;
+    top: -25rem;
+    left: 63rem;
+    animation-name: senze;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
+
+.char2 > img {
+  position: relative;
+    top: -58rem;
+    width: 45vw;
+    left: 27rem;
+    animation-name: oni;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    transition: all 1.25s ease-in;
+}
+.char3 > img { 
+  top: -81rem;
+    position: relative;
+    width: 23vw;
+    left: 14vw;
+ animation-name: sickgu;
+ animation-duration: 7s;
+ animation-iteration-count: infinite;
+}
+
+.char4{
+  position: absolute;
+}
+.char4 > img {
+  position: relative;
+    width: 29vw;
+    top: -112rem;
+    left: 74rem;
+    animation: jungu;
+    animation-duration: 7s;
+ animation-iteration-count: infinite;
+}
+
+.dbd{
+  font-size: 89px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    top: -96rem;
+    left: 46rem;
+}
+@keyframes oni{
+  0%{
+    opacity: 0.9;
+    transform:scale(1)
+  }to{
+    opacity: 1;
+    transform:scale(1.2);
+
+  }
+}
+@keyframes dotgu{
+  0%{
+    opacity: 0.9;
+    transform: translate3d(10%,0,0);
+  }to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes senze{
+  0%{opacity: 0.9;
+     transform: translate3d(-10%,0,0);}
+  to{
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+}
+
+@keyframes sickgu{
+0%{
+  opacity: 0.9;
+  transform: translate3d(8%,0,0);
+}to{
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+@keyframes jungu{
+  0%{
+    opacity: 0.9;
+    transform: translate3d(-10%,0,0);
+  }to{
+    opacity: 1;
+    transform: translateZ(0);
+  }
+
+}
+.headMenu > ul > li > a >i{
+  font-size: 20px;
+}
+      
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <div id="logo">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5A1kkVLW3IQwitQF1xD0ijZeKZuZhomxfYg&usqp=CAU"
+            alt=""
+          />
+        </div>
+        <nav class="headMenu">
+          <ul>
+            <li class="floatL padding2em paddingL16">
+              <a href="#" >HOME</a
+              ><i class="fa-solid fa-arrow-down fa-1x" style="color: white; padding: 0.5rem;"></i>
+            </li>
+            <li class="floatL padding2em" >
+              <a href="#" id="game">GAME</a
+              ><i id="game" class="fa-solid fa-arrow-down fa-1x" style="color: white; padding: 0.5rem;"></i>
+            </li>
+            <li class="floatL padding2em">
+              <a href="#">NEWS & MEDIA GALLERY</a
+              ><i class="fa-solid fa-arrow-down fa-1x" style="color: white; padding: 0.5rem;"></i>
+            </li>
+            <li class="floatL padding2em">
+              <a href="#">COMMUNITY</a
+              ><i class="fa-solid fa-arrow-down fa-1x" style="color: white; padding: 0.5rem;"></i>
+            </li>
+            <li class="floatL padding2em">
+              <a href="#">MERCH</a
+              ><i class="fa-solid fa-arrow-down fa-1x" style="color: white; padding: 0.5rem;"></i>
+            </li>
+            <li class="floatL padding2em">
+              <a href="#"
+                >HELP <i class="fa-solid fa-arrow-down fa-1x" style="color: white; padding: 0.5rem;"></i>
+              </a>
+            </li class="floatL">
+            <div class="rightHeadMenu floatR">
+            <li class="floatL padding2em"><a href="#"><i class="fa-solid fa-globe fa-3x" style="color: white; padding: 0.5rem;     display: block;
+              position: absolute;
+              top: 24px;
+              right: 215px;
+          "></i></a></li>
+            <li class="floatL padding2em backColor "><a href="#">PLAY NOW</a></li>
+          </div>
+          </ul>
+        </nav>
+        <nav id="gameMnue">
+          <ul>
+            <li><a href="#"></a>GAEM OVERVIEW</li>
+            <li><a href="#"></a>KILLERS & SURVIVORS</li>
+            <li><a href="#"></a>CHAPTER DLC</li>
+            <li><a href="#"></a>THE ARCHIVES</li>
+            <li><a href="#"></a>MAP</li>
+           
+          </ul>
+        </nav>
+      </header>
+     
+     <section id="centerMneu">
+       
+        <div class="back">
+         
+          <img src="https://p4.wallpaperbetter.com/wallpaper/441/726/345/dark-forest-creepy-grave-path-wallpaper-preview.jpg" alt="">
+          
+        </div>
+        <div class="char">
+          <img class="dotgu" src="https://i.namu.wiki/i/Ksdt0XOfrtSW1Mu2hB9p9ZLxTwxtMo27r9RBBI2Rcy_peARtm6lLAs2nDqqtRlHAiKqCohgcgMtEt9KVpDQH1g.webp" alt="">
+          <div class="char1 senze"> <img  src="https://i.namu.wiki/i/FqsA4aZ1yk4hXNxoK_hL5Yvm9ibZ-sXrXpR6KA4IlKrVY4iIrjz6O8rbI4Q2lXFtRuuvAM8wYR4c_J0sCkNafg.webp" alt=""></div>
+         
+        </div>
+        <div class="char2">
+          <img class="oni" src="https://i.namu.wiki/i/hpQZ69njOU1TGab5wdl4Ln64Z3qOsuukGCUuYHblVVXobfV1JS_UApS6yCfc1RIW-YfaDLn8NOiTsmyi8MLn2Q.webp" alt="">
+        </div>
+        <div class="char3">
+          <img class="sickgu" src="https://i.namu.wiki/i/BaXZNcyKqcd1goY3chr1IT-LU7FBFNRZTFWmP4dA6ctEmUOuj3CRGUECA05R_eY7gs6qbQ9PfV6OY5ssCxTiOw.webp" alt="">
+        </div>
+        <div class="char4">
+          <img class="jungu"  src="https://i.namu.wiki/i/F479GfIXCymiljHhFlEQweMYpPVHufLxuEG66iWEKuBfyhFYs92XZ6j80g4WLtbaKG_faG8Rb2Tjm0MMmOS1KQ.webp" alt="">
+        </div>
+        <!-- <div class="fire">
+          <img src="https://t1.daumcdn.net/cfile/blog/185ACE0C4A74F819D6" type="">
+        </div> -->
+        <div class="dbd">
+          <span>DEAD BY<br> DAYLIGHT</span>
+          
+        </div>
+        
+     </section>
+    </div>
+    <script>
+      let btnGame = document.querySelector("#game");
+      btnGame.
+    </script>
+  </body>
+</html>
