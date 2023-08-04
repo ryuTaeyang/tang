@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>데이터 작성</title>
+</head>
+<body>
+<p th:if="${fail}" th:text="${fail}" style="color:red">fail</p>
+<div>
+  <p th:if="${check}" th:text="${check}" style="color:blue">check</p>
+
+  <form method="post" th:action="@{/insert/home}"  th:object="${loginForm}">
+    <label>사용자 아이디</label><br>
+   <input type="text" placeholder="아이뒤를 작성해주세요" th:field="*{id}"><br>
+    <label>사용자 패스워드</label><br>
+    <input type="password" placeholder="비밀번호를 작성해주세요" th:field="*{pws}"><br>
+    <label>사용자 실제 이름</label><br>
+      <input type="text" placeholder="이름을 작성해주세요" th:field="*{name}"><br>
+    <label>사용자 닉네임</label><br>
+    <input type="text" placeholder="닉네임을 작성해주세요" th:field="*{author}"><br>
+    <label>사용자 이메일</label><br>
+    <input type="email" placeholder="이메일을 작성해주세요" th:field="*{email}"><br>
+  <button type="submit" >데이터 등록</button>
+
+
+  </form>
+</div>
+</body>
+</html>

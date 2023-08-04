@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>변경/삭제</title>
+</head>
+<body>
+
+<th:block th:object="${loginForm}">
+<div class="container">
+  <p th:if="${hey}" th:text="${hey}" style="color:red">test</p>
+  <form method="post" th:action="|/home/updateUserDt/${loginForm.no}|" >
+    <label>사용자 아이디</label><br>
+    <input type="text" placeholder="아이뒤를 작성해주세요"  th:field="*{id}" ><br>
+    <label>사용자 패스워드</label><br>
+    <input type="password" placeholder="비밀번호를 작성해주세요" th:field="*{pws}" id="user_pws1"><br>
+    <label>사용자 실제 이름</label><br>
+    <input type="text" placeholder="이름을 작성해주세요" th:field="*{name}" ><br>
+    <label>사용자 닉네임</label><br>
+    <input type="text" placeholder="닉네임을 작성해주세요" th:field="*{author}"><br>
+    <label>사용자 이메일</label><br>
+    <input type="email" placeholder="이메일을 작성해주세요"  th:field="*{email}"><br>
+    <input type="hidden" th:field="*{time}"  >
+    <input type="submit" value="변경" style="" >
+
+  </form>
+  <hr>
+  <h3>삭제하시겠습니까?</h3>
+
+  <p th:if="${msg2}" th:text="${msg2}" style="color:red">test</p>
+  <p th:if="${msg4}" th:text="${msg4}" style="color:red">test</p>
+<form method="post" th:action="|/home/delete/${loginForm.no}|">
+<input type="hidden" th:field="*{id}">
+  <input type="hidden"  name="no" th:value="*{no}">
+  <input type="password"  placeholder="사용자 패스워드 확인"  th:field="*{pws}" id="user_pws2">
+  <input type="hidden"   th:field="*{name}">
+  <input type="hidden"  th:field="*{author}">
+  <input type="hidden"  th:field="*{email}">
+  <input type="hidden"  th:field="*{time}">
+  <input type="submit" value="삭제">
+</form>
+
+
+</div>
+</th:block>
+<script>
+
+user_pws1.onInput=function(e){
+  user_pws2.value=e.target.value;
+}
+function error(){
+       if(user_pws1.value == ""){
+         alert("값을 넣으세요");
+       }
+     }
+<!--     error();-->
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+    <nav>사용자 데이터</nav>
+    <style>
+        a{ text-decoration:none;
+        color:black;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <br/>
+    <div align="right" style="margin-right:100px">
+       <button onclick="location.href='./insert'">
+           데이터 기록
+       </button>
+    </div>
+    <br/>
+    <p th:if="${fail}" th:text="${fail}" style="color:red">test</p>
+    <p th:if="${complete}" th:text="${complete}" style="color:blue">test</p>
+    <p th:if="${decomplete}" th:text="${decomplete}" style="color:blue">test</p>
+    <p th:if="${msg1}" th:text="${msg1}" style="color:blue">test</p>
+    <p th:if="${msg3}" th:text="${msg3}" style="color:blue">test</p>
+
+
+    <p th:if="${check}" th:text="${check}" style="color:blue">test</p>
+    <div>
+        <form method="post" th:action="@{/insert/home}" th:object="${loginForm}">
+        <table border="1" width="1100" align="center" style="table-layout: fixed;">
+            <thead>
+            <tr>
+                <th width="50">#</th>
+                <th width="100">사용자 아이뒤</th>
+                <th width="100">사용자 비밀번호</th>
+                <th width="150">사용자 닉네임</th>
+                <th width="150">사용자 이메일</th>
+                <th width="180">사용자 작성일</th>
+                <th width="54">삭제/변경</th>
+            </tr>
+            </thead>
+            <tbody align="center">
+            <tr th:each="obj:${list}" align="center">
+                <td th:text="${obj.no}" th:field="*{no}"></td>
+                <td th:text="${obj.id}" th:field="*{id}"></td>
+                <td th:text="${obj.pws}" th:field="*{pws}" ></td>
+                <td th:text="${obj.author}" th:field="*{author}"></td>
+                <td th:text="${obj.email}" th:field="*{email}"></td>
+                <td th:text="${obj.time}">[[${time}]]</td>
+                <td><a th:href="|/home/updateUserDt/${obj.no}|">확인</a></td>
+            </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>
