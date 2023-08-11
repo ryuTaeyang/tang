@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>회원데이터목록</title>
+</head>
+<body>
+<div>
+    <form method="post" th:action="@{/login/members}" th:obejct="${blogForm}">
+        <table border="1" style="table-layout:fixed;">
+            <tr>
+                <th>NUM</th>
+                <th>아이디</th>
+                <th>패스워드</th>
+                <th>이름</th>
+                <th>이메일</th>
+                <th>작성날짜</th>
+            </tr>
+            <tr th:each="obj : ${list}" align="center">
+                <td th:text="${obj.number}"></td>
+                <td th:text="${obj.id}"></td>
+                <td th:text="${obj.psw}"></td>
+                <td th:text="${obj.name}"></td>
+                <td th:text="${obj.email}"></td>
+                <td th:text="${obj.time}">[[${time}]]</td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+</body>
+</html>

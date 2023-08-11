@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인실패</title>
+    <style>
+         a {
+  text-decoration: none;
+  color: black;
+}
+    </style>
+</head>
+<body>
+<th:block >
+  <a href="/login"><h1 style="color:red">계정이 틀립니다(돌아가기)</h1></a>
+  <p th:text="${loginFailed}"></p>
+</th:block>
+</body>
+</html>

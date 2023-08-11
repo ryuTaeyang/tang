@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>로그인화면</title>
+  <link rel="stylesheet" href="/login.css" />
+  <script src="https://kit.fontawesome.com/ae20d15cd7.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+  margin: 5px auto;
+  padding: 5px;
+}
+legend {
+  font-size: 40px;
+  font-weight: bold;
+}
+fieldset {
+  width: 61%;
+  border-radius: 14px;
+}
+i {
+  border-radius: 20px;
+  border: 1px solid;
+}
+.line {
+  border-bottom: 1px solid black;
+}
+input {
+  border-radius: 20px;
+}
+input:hover {
+  scale: 1.1;
+}
+i:hover {
+  scale: 1.1;
+}
+button {
+  border-radius: 20px;
+  width: 41%;
+}
+button:hover {
+  scale: 1.1;
+}
+
+.loginbox {
+  float: left;
+}
+.btn {
+  clear: both;
+  content: "";
+}
+
+.left {
+  width: 100%;
+  float: left;
+}
+.centerline {
+  border-right: 1px solid black;
+}
+.right {
+  width: 100%;
+}
+#content {
+  display: flex;
+  align-items: stretch;
+}
+
+.fied {
+  font-size: 15px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a :hover {
+  color: skyblue;
+}
+
+  </style>
+</head>
+<body>
+<th:block unless="${session}">
+
+<div id="container">
+  <p th:text="${msg}"></p>
+  <div class="login">
+    <fieldset>
+      <legend>로그인</legend>
+      <span style="font-size: 40px;">Please Login!</span>
+      <div class="line"></div>
+      <div id="content">
+
+        <div class="left">
+          <div class="loginbox">
+            <form method="post" th:action="@{/login/home}" th:object="${blogLoginForm}"  >
+              <label ><i class="fa-regular fa-user"></i></label>
+              <input type="text" th:field="*{id}" placeholder="아이디를 입력해주세요"><br>
+              <label ><i class="fa-solid fa-unlock-keyhole"></i></label>
+              <input type="password" th:field="*{psw}" placeholder="패스워드를 입력해주세요"><br>
+              <div class="btn">
+                <label ><i class="fa-regular fa-square-check"></i></label>
+                <button type="submit">로그인</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="right">
+          <form method="post" action="@{/login/register}" >
+            <fieldset ><legend class="fied">회원가입을 하시겠습니까?</legend>
+              <label ><i class="fa-solid fa-user-plus"></i></label>
+              <a href="/login/register"><span>회원가입</span></a><br>
+              <label ><i class="fa-solid fa-user-slash"></i></label>
+              <a href=""><span>회원탈퇴</span></a>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+</th:block>
+</body>
+</html>
